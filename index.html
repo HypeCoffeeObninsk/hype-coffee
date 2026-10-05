@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ХАЙП КОФЕ — Время создавать эмоции</title>
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <meta name="description" content="ХАЙП КОФЕ — уютная кофейня в Обнинске. Свежая обжарка, авторские напитки, десерты. Два адреса: Красных Зорь, 4 и Долгининская, 18.">
+    <meta name="keywords" content="кофейня Обнинск, ХАЙП КОФЕ, кофе Обнинск, десерты, завтраки">
+    <meta property="og:title" content="ХАЙП КОФЕ — Время создавать эмоции">
+    <meta property="og:description" content="Уютная кофейня в Обнинске. Авторские напитки, десерты, мерч.">
+    <meta property="og:image" content="https://hypecoffeeobninsk.github.io/hype-coffee/hero.jpg">
+    <meta property="og:url" content="https://hypecoffeeobninsk.github.io/hype-coffee/">
+    <meta property="og:type" content="website">
+
+    <style>
+        :root {
+            --brown-dark: #2A1A12;
+            --brown-mid: #3A2518;
+            --brown-light: #4A3020;
+            --orange: #D98A2B;
+            --orange-light: #F0A84B;
+            --text-light: #FDFBF7;
+            --text-dark: #2A1A12;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--brown-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            font-weight: 400;
+        }
+
+        img { max-width: 100%; display: block; }
+
+        /* --- ШАПКА --- */
+        header {
+            height: 100vh;
+            min-height: 600px;
+            background: linear-gradient(rgba(42, 26, 18, 0.55), rgba(42, 26, 18, 0.9)), url('hero.jpg') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .logo-wrapper {
+            background-color: #2A1A12;
+            padding: 20px 35px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(217, 138, 43, 0.4);
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-wrapper:hover { transform: scale(1.05); }
+        .logo-wrapper img { max-width: 240px; }
+
+        header h1 {
+            font-size: 3.5rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 800;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+        }
+
+        .slogan {
+            font-size: 1.4rem;
+            color: #FFFFFF;
+            margin-bottom: 40px;
+            font-weight: 300;
+            font-style: oblique 14deg;
+            letter-spacing: 1px;
+        }
+
+        .btn-main {
+            background-color: var(--orange);
+            color: var(--brown-dark);
+            padding: 15px 45px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--orange);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
+
+        .btn-main:hover {
+            background-color: transparent;
+            color: var(--orange);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(217, 138, 43, 0.3);
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--orange);
+            padding: 15px 45px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--orange);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--orange);
+            color: var(--brown-dark);
+            transform: translateY(-3px);
+        }
+
+        /* --- НАВИГАЦИЯ --- */
+        .nav {
+            display: flex;
+            gap: 25px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .nav a:hover {
+            color: var(--orange);
+            background-color: rgba(217, 138, 43, 0.1);
+        }
+
+        /* --- СЕКЦИИ --- */
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--orange);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 800;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--orange);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        /* --- ГАЛЕРЕЯ --- */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid var(--brown-light);
+            background-color: var(--brown-mid);
+            height: 280px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 30px rgba(217, 138, 43, 0.4);
+            border-color: var(--orange);
+        }
+
+        .gallery-item:hover img { transform: scale(1.1); }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.85));
+            color: var(--text-light);
+            padding: 20px 15px 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- О НАС --- */
+        .about-text {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+
+        .about-text strong { color: var(--orange-light); }
+
+        /* --- МЕНЮ --- */
+        .menu-wrapper { background-color: #1F110A; max-width: 100%; }
+        .menu-inner { max-width: 1200px; margin: 0 auto; }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-category {
+            background-color: #3A2518;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            border-top: 4px solid var(--orange);
+        }
+
+        .menu-category h3 {
+            font-size: 1.6rem;
+            color: var(--orange-light);
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 15px;
+            border-bottom: 1px dashed #5a4030;
+            padding-bottom: 5px;
+        }
+
+        .menu-item-name { font-weight: 600; color: var(--text-light); }
+        .menu-item-volume { font-size: 0.85rem; color: #aaa; margin-left: 5px; font-weight: 400; }
+        .menu-item-price { font-weight: 700; color: var(--orange); white-space: nowrap; margin-left: 10px; }
+
+        .new-badge {
+            background-color: var(--orange);
+            color: var(--brown-dark);
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 5px;
+            vertical-align: middle;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* --- ДЕСЕРТЫ --- */
+        .desserts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .dessert-card {
+            background-color: var(--brown-mid);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--brown-light);
+        }
+
+        .dessert-card:hover { transform: translateY(-8px); }
+
+        .dessert-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            object-position: center 40%;
+        }
+
+        .dessert-card-body { padding: 20px; }
+
+        .dessert-card h3 {
+            color: var(--orange-light);
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .dessert-card p {
+            font-size: 0.9rem;
+            color: #ccc;
+            margin-bottom: 12px;
+        }
+
+        .dessert-price {
+            font-size: 1.3rem;
+            color: var(--orange);
+            font-weight: 800;
+        }
+
+        /* --- ФИРМЕННЫЕ НАПИТКИ (заменяет МЕРЧ) --- */
+        .signature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .signature-card {
+            background: linear-gradient(135deg, var(--brown-mid), var(--brown-light));
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--orange);
+        }
+
+        .signature-card:hover { transform: translateY(-8px); }
+
+        .signature-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            background-color: #fff;
+        }
+
+        .signature-card-body { padding: 20px; text-align: center; }
+
+        .signature-card h3 {
+            color: var(--orange-light);
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .signature-card p {
+            font-size: 0.9rem;
+            color: #ddd;
+            margin-bottom: 12px;
+        }
+
+        /* --- КОМБО --- */
+        .combo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .combo-card {
+            background-color: var(--text-light);
+            color: var(--text-dark);
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .combo-card:hover { transform: translateY(-10px); }
+        .combo-card h3 { font-size: 1.4rem; margin-bottom: 10px; text-transform: uppercase; font-weight: 700; }
+        .combo-card .price { font-size: 2rem; color: var(--orange); font-weight: 800; margin-bottom: 20px; }
+        .combo-card p { font-size: 0.95rem; color: #555; }
+
+        /* --- ОТЗЫВЫ --- */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .review-card {
+            background-color: var(--brown-mid);
+            border-radius: 15px;
+            padding: 30px;
+            border-left: 5px solid var(--orange);
+            transition: transform 0.3s ease;
+        }
+
+        .review-card:hover { transform: translateY(-5px); }
+
+        .review-stars {
+            color: var(--orange);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+        }
+
+        .review-card p {
+            font-style: italic;
+            color: #ddd;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .review-author {
+            display: block;
+            color: var(--orange-light);
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        /* --- ВАКАНСИИ --- */
+        .jobs-text {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .jobs-text p {
+            font-size: 1.1rem;
+            color: #ddd;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .jobs-text strong { color: var(--orange-light); }
+
+        .job-phone {
+            color: var(--orange);
+            font-weight: 700;
+            text-decoration: none;
+            border-bottom: 1px dashed var(--orange);
+            transition: color 0.3s ease;
+        }
+
+        .job-phone:hover { color: var(--orange-light); }
+
+        /* --- КОНТАКТЫ --- */
+        .contacts-section { background-color: #1F110A; max-width: 100%; }
+        .contacts-inner { max-width: 1200px; margin: 0 auto; }
+
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .contact-card {
+            background-color: var(--brown-mid);
+            border-radius: 15px;
+            padding: 30px;
+            border-left: 5px solid var(--orange);
+        }
+
+        .contact-card h3 {
+            color: var(--orange-light);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .contact-card p { margin-bottom: 10px; color: #ddd; }
+        .contact-card strong { color: var(--text-light); font-weight: 700; }
+
+        .contact-card a.map-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--orange);
+            text-decoration: none;
+            font-weight: 700;
+            border-bottom: 1px dashed var(--orange);
+        }
+
+        .contact-card a.map-link:hover { color: var(--orange-light); }
+
+        .phone-block {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .phone-block p {
+            font-size: 1.1rem;
+            color: #ddd;
+            margin-bottom: 10px;
+        }
+
+        .phone-block a {
+            color: var(--orange);
+            font-size: 2rem;
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        .phone-block a:hover { text-decoration: underline; }
+
+        /* --- СОЦСЕТИ В ПОДВАЛЕ --- */
+        .socials {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .socials a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background-color: var(--brown-mid);
+            color: var(--orange);
+            border-radius: 50%;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .socials a:hover {
+            background-color: var(--orange);
+            color: var(--brown-dark);
+            transform: translateY(-3px);
+        }
+
+        /* --- ПОДВАЛ --- */
+        footer {
+            text-align: center;
+            padding: 40px 20px 30px;
+            background-color: #110906;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        footer .footer-slogan {
+            color: var(--orange);
+            font-style: italic;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        footer .footer-copy {
+            margin-top: 15px;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* --- КНОПКА НАВЕРХ --- */
+        .to-top {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 48px;
+            height: 48px;
+            background-color: var(--orange);
+            color: var(--brown-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.4rem;
+            font-weight: 800;
+            box-shadow: 0 6px 20px rgba(217, 138, 43, 0.5);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .to-top:hover {
+            background-color: var(--orange-light);
+            transform: translateY(-4px);
+        }
+
+        /* --- АДАПТИВНОСТЬ --- */
+        @media (max-width: 768px) {
+            header {
+                height: auto;
+                min-height: 100vh;
+                padding: 80px 20px 50px;
+            }
+            header h1 { font-size: 2.2rem; }
+            .slogan { font-size: 1.1rem; }
+            .logo-wrapper { padding: 15px 25px; }
+            .logo-wrapper img { max-width: 180px; }
+            .header-buttons { flex-direction: column; width: 100%; max-width: 280px; }
+            .btn-main, .btn-outline { width: 100%; text-align: center; padding: 14px 20px; }
+            section { padding: 50px 15px; }
+            .section-title { font-size: 1.8rem; }
+            .contacts-grid { grid-template-columns: 1fr; }
+            .phone-block a { font-size: 1.5rem; }
+            .gallery-item { height: 220px; }
+            .nav { gap: 10px; margin-top: 20px; }
+            .nav a { font-size: 0.75rem; padding: 6px 8px; }
+            .to-top { width: 42px; height: 42px; bottom: 15px; right: 15px; font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ГЛАВНЫЙ ЭКРАН -->
+    <header>
+        <div class="logo-wrapper">
+            <img src="logo.png" alt="ХАЙП КОФЕ">
+        </div>
+        <h1>ХАЙП КОФЕ</h1>
+        <p class="slogan">Время создавать эмоции</p>
+
+        <div class="header-buttons">
+            <a href="#menu" class="btn-main">Смотреть меню</a>
+            <a href="tel:+79038100800" class="btn-outline">📞 Позвонить</a>
+        </div>
+
+        <nav class="nav">
+            <a href="#about">О нас</a>
+            <a href="#menu">Меню</a>
+            <a href="#desserts">Десерты</a>
+            <a href="#signature">Фирменные напитки</a>
+            <a href="#reviews">Отзывы</a>
+            <a href="#jobs">Вакансии</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+    </header>
+
+    <!-- О НАС + ГАЛЕРЕЯ -->
+    <section id="about">
+        <h2 class="section-title">О НАС</h2>
+        <div class="about-text">
+            <p><strong>«ХАЙП КОФЕ»</strong> — это не просто кофейня. Это пространство, где каждая деталь создана для вашего комфорта: мягкий свет, живая зелень, уютные кресла и аромат свежеобжаренных зёрен.</p>
+            <p>Мы готовим напитки из отборного зерна, экспериментируем с авторскими рецептами и всегда рады угостить вас свежей выпечкой.</p>
+        </div>
+
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="facade.jpg" alt="Фасад кофейни ХАЙП КОФЕ">
+                <div class="gallery-caption">Наш фасад</div>
+            </div>
+            <div class="gallery-item">
+                <img src="interior-1.jpg" alt="Интерьер кофейни">
+                <div class="gallery-caption">Уютный зал</div>
+            </div>
+            <div class="gallery-item">
+                <img src="interior-2.jpg" alt="Зона у окна">
+                <div class="gallery-caption">Зона у окна</div>
+            </div>
+            <div class="gallery-item">
+                <img src="coffee-1.jpg" alt="Капучино с сердечком">
+                <div class="gallery-caption">Капучино с любовью</div>
+            </div>
+            <div class="gallery-item">
+                <img src="coffee-2.jpg" alt="Латте-арт">
+                <div class="gallery-caption">Латте-арт</div>
+            </div>
+            <div class="gallery-item">
+                <img src="coffee-3.jpg" alt="Айс-кофе с ягодами">
+                <div class="gallery-caption">Авторский айс-кофе</div>
+            </div>
+            <div class="gallery-item">
+                <img src="showcase.jpg" alt="Витрина с десертами">
+                <div class="gallery-caption">Витрина с десертами</div>
+            </div>
+            <div class="gallery-item">
+                <img src="decor.jpg" alt="Декор кофейни">
+                <div class="gallery-caption">Новогодний декор</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- МЕНЮ -->
+    <section id="menu" class="menu-wrapper">
+        <div class="menu-inner">
+            <h2 class="section-title">Наше Меню</h2>
+
+            <div class="menu-grid">
+                <div class="menu-category">
+                    <h3>Классические</h3>
+                    <div class="menu-item">
+                        <span class="menu-item-name">Эспрессо <span class="menu-item-volume">40 мл</span></span>
+                        <span class="menu-item-price">160 ₽</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name">Американо <span class="menu-item-volume">250 мл</span></span>
+                        <span class="menu-item-price">170 ₽</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name">Американо <span class="menu-item-volume">350 мл</span></span>
+                        <span class="menu-item-price">220 ₽</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name">Американо <span class="menu-item-volume">450 мл</span></span>
+                        <span class="menu-item-price">260 ₽</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name">Латте <span class="menu-item-volume">350 мл</span></span>
+                        <span class="menu-item-price">280 ₽</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name">Латте <span class="menu-item-volume">450 мл</span></span>
+                        <span class="menu-item-price">320 ₽</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name">Латте с сиропом <span class="menu-item-volume">350 мл</span></span>
+                        <span class="menu-item-price">330 ₽</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name">Латте с сиропом <span class="menu-item-volume">450 мл</span></span>
+                        <span class="menu-item-price">350 ₽</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name">Капучино <span class="menu-item-volume">350 мл</span></span>
+                        <span class="menu-item-price">280 ₽</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name">Капучино <span class="menu-item-volume">450 мл</span></span>
+                        <span class="menu-item-price">340 ₽</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name">Капучино с сиропом <span class="menu-item-volume">350 мл</span></span>
+                        <span class="menu-item-price">330 ₽</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name">Капучино с сиропом <span class="menu-item-volume">450 мл</span></span>
+                        <span class="menu-item-price">390 ₽</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name">Флет уайт <span class="menu-item-volume">250 мл</span></span>
+                        <span class="menu-item-price">270 ₽</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name">Флет уайт <span class="menu-item-volume">350 мл</span></span>
+                        <span class="menu-item-price">330 ₽</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name">Чай в ассортименте <span class="menu-item-volume">450 мл</span></span>
+                        <span class="menu-item-price">210 ₽</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name">Чай пакетированный <span class="menu-item-volume">450 мл</span></span>
+                        <span class="menu-item-price">70 ₽</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name">Раф <span class="menu-item-volume">350 мл</span></span>
+                        <span class="menu-item-price">320 ₽</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name">Раф <span class="menu-item-volume">450 мл</span></span>
+                        <span class="menu-item-price">380 ₽</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name">Раф с сиропом <span class="menu-item-volume">350 мл</span></span>
+                        <span class="menu-item-price">370 ₽</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name">Раф с сиропом <span class="menu-item-volume">450 мл</span></span>
+                        <span class="menu-item-price">430 ₽</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name">Горячий шоколад <span class="menu-item-volume">350 мл</span></span>
+                        <span class="menu-item-price">230 ₽</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name">Горячий шоколад <span class="menu-item-volume">450 мл</span></span>
+                        <span class="menu-item-price">260 ₽</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name">Какао <span class="menu-item-volume">350 мл</span></span>
+                        <span class="menu-item-price">210 ₽</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name">Какао <span class="menu-item-volume">450 мл</span></span>
+                        <span class="menu-item-price">240 ₽</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name">Фильтр <span class="menu-item-volume">250 мл</span></span>
+                        <span class="menu-item-price">130 ₽</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name">Фильтр <span class="menu-item-volume">350 мл</span></span>
+                        <span class="menu-item-price">180 ₽</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name">Фильтр <span class="menu-item-volume">450 мл</span></span>
+                        <span class="menu-item-price">220 ₽</span>
+                    </div>
+                </div>
+
+                <div class="menu-category">
+                    <h3>Фирменные напитки</h3>
+                    <div class="menu-item">
+                        <span class="menu-item-name">Матча <span class="menu-item-volume">350 мл</span></span>
+                        <span class="menu-item-price">330 ₽</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name">Матча <span class="menu-item-volume">450 мл</span></span>
+                        <span class="menu-item-price">440 ₽</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name">Облепиховый чай <span class="menu-item-volume">350 мл</span></span>
+                        <span class="menu-item-price">250 ₽</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name">Облепиховый чай <span class="menu-item-volume">450 мл</span></span>
+                        <span class="menu-item-price">300 ₽</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name">Моккачино <span class="menu-item-volume">250 мл</span></span>
+                        <span class="menu-item-price">260 ₽</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name">Моккачино <span class="menu-item-volume">350 мл</span></span>
+                        <span class="menu-item-price">320 ₽</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name">Латте ягодный трюфель <span class="menu-item-volume">350 мл</span></span>
+                        <span class="menu-item-price">320 ₽</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name">Латте северный лес <span class="menu-item-volume">350 мл</span></span>
+                        <span class="menu-item-price">320 ₽</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name">Раф фисташковый бум <span class="menu-item-volume">350 мл</span></span>
+                        <span class="menu-item-price">360 ₽</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name">Раф нежная лаванда <span class="menu-item-volume">350 мл</span></span>
+                        <span class="menu-item
