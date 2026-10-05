@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ХАЙП КОФЕ — Время создавать эмоции</title>
+    <link rel="icon" type="image/png" href="logo.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
+<meta name="description" content="ХАЙП КОФЕ — уютная кофейня в Обнинске. Свежая обжарка, авторские напитки, десерты. Два адреса: Красных Зорь, 4 и Долгининская, 18.">
+<meta name="keywords" content="кофейня Обнинск, ХАЙП КОФЕ, кофе Обнинск, десерты, завтраки">
+<meta property="og:title" content="ХАЙП КОФЕ — Время создавать эмоции">
+<meta property="og:description" content="Уютная кофейня в Обнинске. Авторские напитки, десерты, мерч.">
+<meta property="og:image" content="https://hypecoffeeobninsk.github.io/hype-coffee/hero.jpg">
+<meta property="og:url" content="https://hypecoffeeobninsk.github.io/hype-coffee/">
+<meta property="og:type" content="website">
     <style>
         :root {
             --brown-dark: #2A1A12;
@@ -134,7 +142,42 @@
             margin: 15px auto 0;
             border-radius: 2px;
         }
+/* --- НАВИГАЦИЯ В ШАПКЕ --- */
+.nav {
+    display: flex;
+    gap: 25px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
+.nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.nav a:hover {
+    color: var(--orange);
+    background-color: rgba(217, 138, 43, 0.1);
+}
+
+@media (max-width: 768px) {
+    .nav {
+        gap: 12px;
+        margin-top: 20px;
+    }
+    .nav a {
+        font-size: 0.8rem;
+        padding: 6px 8px;
+    }
+}
         /* --- ГАЛЕРЕЯ --- */
         .gallery {
             display: grid;
@@ -455,7 +498,7 @@
         </div>
         <h1>ХАЙП КОФЕ</h1>
         <p class="slogan">Время создавать эмоции</p>
-        <a href="#menu" class="btn-main">Смотреть меню</a>
+        <a href="#menu" class="btn-main">Смотреть меню</a><nav>
     </header>
 
     <!-- О НАС + ГАЛЕРЕЯ -->
@@ -732,7 +775,102 @@
             </div>
         </div>
     </section>
+</section>
 
+<!-- ⬇⬇⬇ ОТЗЫВЫ ⬇⬇⬇ -->
+<section id="reviews">
+    <h2 class="section-title">Отзывы гостей</h2>
+    <div class="reviews-grid">
+        <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p>«Лучший раф в городе! Атмосфера уютная, персонал приветливый. Прихожу каждое утро.»</p>
+            <span class="review-author">— Анна, постоянный гость</span>
+        </div>
+        <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p>«Отличное место для работы. Wi-Fi быстрый, кофе вкусный, десерты свежие.»</p>
+            <span class="review-author">— Дмитрий, фрилансер</span>
+        </div>
+        <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p>«Ходим с семьёй каждые выходные. Детям нравятся чизкейки, нам — капучино.»</p>
+            <span class="review-author">— Семья Петровых</span>
+        </div>
+    </div>
+</section>
+<!-- ⬆⬆⬆ КОНЕЦ ОТЗЫВОВ ⬆⬆⬆ -->
+/* --- ОТЗЫВЫ --- */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.review-card {
+    background-color: var(--brown-mid);
+    border-radius: 15px;
+    padding: 30px;
+    border-left: 5px solid var(--orange);
+    transition: transform 0.3s ease;
+}
+
+.review-card:hover { transform: translateY(-5px); }
+
+.review-stars {
+    color: var(--orange);
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    letter-spacing: 3px;
+}
+
+.review-card p {
+    font-style: italic;
+    color: #ddd;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.review-author {
+    display: block;
+    color: var(--orange-light);
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+<!-- ⬇⬇⬇ ВАКАНСИИ ⬇⬇⬇ -->
+<section id="jobs">
+    <h2 class="section-title">Работа у нас</h2>
+    <div class="jobs-text">
+        <p>Мы всегда рады новым талантам в команду <strong>«ХАЙП КОФЕ»</strong>. Если ты любишь кофе, людей и хочешь работать в уютной атмосфере — пиши нам!</p>
+        <p>📞 Позвонить: <a href="tel:+79038100800" class="job-phone">8 903 810-08-00</a></p>
+        <p>📧 Email: <a href="mailto:hypekofe@yandex.ru" class="job-phone">job@hype-coffee.ru</a></p>
+    </div>
+</section>
+<!-- ⬆⬆⬆ КОНЕЦ ВАКАНСИЙ ⬆⬆⬆ -->
+/* --- ВАКАНСИИ --- */
+.jobs-text {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.jobs-text p {
+    font-size: 1.1rem;
+    color: #ddd;
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.jobs-text strong { color: var(--orange-light); }
+
+.job-phone {
+    color: var(--orange);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 1px dashed var(--orange);
+    transition: color 0.3s ease;
+}
+
+.job-phone:hover { color: var(--orange-light); }
     <!-- КОНТАКТЫ -->
     <section id="contacts" class="contacts-section">
         <div class="contacts-inner">
